@@ -3,3 +3,11 @@ A basic & simple Laravel CMS to build from.
 - Clone repo, fill in .env data as seen in .env.example
 - Run `php artisan migrate --seed`
 - Default admin account: admin@email.com pass
+
+
+*Included*
+- User, Roles & Permissions management using Policy
+- Page Management with custom templates
+- Post Management with custom templates
+- Custom fields for pages and posts
+- Interface for services configuration (Email, Payments, Campaigns, etc.)
