@@ -1,0 +1,67 @@
+.form {
+    .form-control {
+        border-radius: 2px;
+        background-color: #edefef;
+        border: 1px solid #e0e5e6;
+        box-shadow: none;
+        color: $color-dark;
+        font-size: 16px;
+
+        &.input-white {
+            background-color: white;
+        }
+
+        &:focus {
+            border: 2px solid $color-blue-paypal;
+        }
+    }
+
+    label {
+        font-size: 20px;
+        font-weight: bold;
+        font-family: 'Josefin Slab', Athiti, 'Open Sans', sans-serif;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    .form-select {
+        border: 1px solid #e6e7e9;
+        border-radius: 0px;
+        height: 45px;
+        width: 100%;
+        position: relative;
+        border-radius: 3px;
+        margin-bottom: 10px;
+
+        select {
+            background-color: white;
+            width: 100%;
+            text-align: center;
+            height: 43px;
+            text-align: center;
+            color: $color-darker;
+            font-weight: 500;
+            font-size: 16px;
+            padding:10px;
+            border:none;
+
+            &:focus {
+                outline: none;
+            }
+        }
+
+        &.grey {
+            background-color: #edefef;
+
+            select {
+                background-color: #edefef;
+            }
+        }
+    }
+}
+
+textarea.no-resize {
+    resize: none;
+}

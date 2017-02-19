@@ -1,0 +1,19 @@
+.block {
+    margin-bottom: 20px;
+    background-color: white;
+    @include box-shadow(2);
+    @include border-radius(2px);
+    padding: 10px 0;
+}
+
+.block-content {
+    padding: 10px;
+
+    h3 {
+        margin: 0;
+        font-size:25px;
+        font-weight: bold;
+        font-variant: small-caps;
+        font-family: Athiti, 'Source Sans Pro', Calibri, sans-serif;;
+    }
+}

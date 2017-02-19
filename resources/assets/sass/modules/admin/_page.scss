@@ -1,0 +1,82 @@
+.page {
+    margin-bottom: 40px;
+    position: relative;
+    margin: 20px;
+    margin-left: 20px;
+    margin-top: 20px;
+    padding: 10px;
+    padding-bottom: 40px;
+    border: 1px solid #f0f0f0;
+    font-family: 'Source Sans Pro', 'Open Sans', Calibri, sans-serif;
+
+    &.page-white {
+        background-color: white;
+    }
+}
+
+.page-title {
+    padding-left: 20px;
+}
+
+.page-heading {
+    margin: 0;
+    padding: 0 18px;
+    font-family: Athiti, 'Open Sans', Calibri, sans-serif;
+
+    .buttons {
+        float: right;
+    }
+
+    .title {
+        font-size:30px;
+    }
+}
+
+
+.table-custom {
+    background-color: white;
+    font-size:16px;
+
+    thead {
+        tr {
+            th {
+                padding: 13px;
+            }
+        }
+    }
+    tbody {
+        tr {
+            background-color: white;
+            td {
+                padding: 15px 10px;
+            }
+        }
+    }
+}
+
+.login-page {
+    width: 100%;
+    background-color: $color-dark;
+    height: 100vh;
+    justify-content: center;
+
+    h3 {
+        color: #f1f2f3;
+        text-transform: uppercase;
+    }
+
+    h2 {
+        margin-bottom: 20px;
+    }
+
+    .login-form {
+        width:90%;
+        max-width: 400px;
+        background-color: white;
+        padding: 20px;
+        margin: 40px auto;
+        text-align: center;
+        @include border-radius(4px);
+    }
+
+}

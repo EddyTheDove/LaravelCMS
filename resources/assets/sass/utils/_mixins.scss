@@ -1,0 +1,147 @@
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    border-radius: $radius;
+}
+
+@mixin background-size( $size ) {
+    -webkit-background-size: $sie;
+    -moz-background-size: $sie;
+    -o-background-size: $sie;
+    background-size: $sie;
+}
+
+@mixin custom-opacity( $opacity ) {
+    opacity: $opacity;
+    $opacity-ie: $opacity * 100;
+    filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+$max: 100;
+$min: 25;
+
+@mixin paddingAll{
+    @while $max > 0 {
+        .pd-#{$max}{padding: $max+px}
+        $max: $max - 10;
+    }
+}
+
+@mixin paddingTop{
+    @while $max > 0 {
+        .pt-#{$max}{padding-top: $max+px}
+        $max: $max - 10;
+    }
+}
+
+@mixin paddingBottom{
+    @while $max > 0 {
+        .pb-#{$max}{padding-bottom: $max+px}
+        $max: $max - 10;
+    }
+}
+
+@mixin paddingLeftRight{
+    @while $max > 0 {
+        .plr-#{$max}{padding-left: $max+px; padding-right: $max+px;}
+        $max: $max - 10;
+    }
+}
+
+@mixin marginAll{
+    @while $max > 0 {
+        .m-#{$max}{margin: $max+px}
+        $max: $max - 10;
+    }
+}
+
+@mixin marginTop{
+    @while $max > 0 {
+        .mt-#{$max}{margin-top: $max+px}
+        $max: $max - 10;
+    }
+}
+
+@mixin marginBottom{
+    @while $max > 0 {
+        .mb-#{$max}{margin-bottom: $max+px}
+        $max: $max - 10;
+    }
+}
+
+@mixin marginLeft{
+    @while $max > 0 {
+        .ml-#{$max}{margin-left: $max+px}
+        $max: $max - 10;
+    }
+}
+
+@mixin marginRight{
+    @while $max > 0 {
+        .mr-#{$max}{margin-right: $max+px}
+        $max: $max - 10;
+    }
+}
+
+@mixin fontSizes{
+    @while $min > 9 {
+        .fs-#{$min}{font-size: $min+px}
+        $min: $min - 1;
+    }
+}
+
+@mixin fontWeight {
+    $skip: 100;
+    @while $skip < 800 {
+        .fw-#{$skip} { font-weight: $skip}
+        $skip: $skip + 100;
+    }
+}
+
+@mixin scrollbar {
+    ::-webkit-scrollbar
+    {
+        width: 10px;  /* for vertical scrollbars */
+        height: 10px; /* for horizontal scrollbars */
+    }
+
+    ::-webkit-scrollbar-track
+    {
+        background: rgba(0, 0, 0, 0.1);
+    }
+
+    ::-webkit-scrollbar-thumb
+    {
+        background: rgba(0, 0, 0, 0.5);
+    }
+}
+
+@mixin background-opacity($color, $background) {
+    $percent: alpha($color) * 100%;
+    $opaque: opacity($color);
+    $solid-color: mix($opaque, $background, $percent);
+    background-color: $solid-color;
+    background-color: $color;
+}
+
+@mixin transition($args...) {
+    -webkit-transition: $args;
+    -moz-transition: $args;
+    -ms-transition: $args;
+    -o-transition: $args;
+    transition: $args;
+}
+
+@mixin box-shadow($size) {
+    -moz-box-shadow:     0 2px rgba(0,0,0,$size);
+    -webkit-box-shadow:  0 2px rgba(0,0,0,$size);
+    box-shadow:          0 2px rgba(0,0,0,$size);
+}
+
+
+@mixin ellipis() {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

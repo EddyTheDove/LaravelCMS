@@ -1,0 +1,15 @@
+
+.alert-danger {
+    background-color: $color-red;
+    color: white;
+}
+
+.alert-success {
+    background-color: $color-greener;
+    border: none;
+    border-radius: 2px;
+    color: white;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 16px;
+}
