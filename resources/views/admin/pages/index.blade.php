@@ -40,7 +40,7 @@
                                         name="keywords"
                                         class="form-control input-lg"
                                         value="{{ Request::get('keywords') }}"
-                                        placeholder="First name, last name or username">
+                                        placeholder="Page title">
                                     </div>
                                 </div>
 

@@ -2,26 +2,26 @@
     <ul class="sidebar-nav">
         <li class="brand">
             <a  href="/admin">
-                Izytech CMS
+                LaravelCMS
             </a>
         </li>
 
         <li class="{{ Request::is('admin') ? 'active' : '' }}">
-            <a href="/admin">
+            <a href="{{ route('admin') }}">
                 <i class="flaticon-desktop"></i>
                 Dashboard
             </a>
         </li>
 
         <li class="{{ Request::is('admin/pages*') ? 'active' : '' }}">
-            <a href="/admin/pages">
+            <a href="{{ route('pages.index' )}}">
                 <i class="flaticon-page"></i>
                 Pages
             </a>
         </li>
 
         <li class="{{ Request::is('admin/posts*') ? 'active' : '' }}">
-            <a href="/admin/posts">
+            <a href="{{ route('posts.index') }}">
                 <i class="flaticon-posts"></i>
                 Posts
             </a>
