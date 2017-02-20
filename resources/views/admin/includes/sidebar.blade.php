@@ -81,7 +81,7 @@
         </li>
 
         <li>
-            <a href="/logout">
+            <a href="{{ route('admin.logout') }}">
                 <i class="flaticon-power"></i>
                 Sign Out
             </a>

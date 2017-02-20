@@ -86,8 +86,10 @@
                 <div class="links">
                     <a href="https://laravel.com/docs">Documentation</a>
                     <a href="https://laracasts.com">Laracasts</a>
-                    <a href="/admin">admin</a>
-                    <a href="/logout">logout</a>
+                    <a href="{{ route('admin') }}">admin</a>
+                    @if (Auth::check())
+                        <a href="/logout">logout</a>
+                    @endif
                 </div>
             </div>
         </div>

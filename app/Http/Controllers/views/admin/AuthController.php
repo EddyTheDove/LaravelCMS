@@ -16,7 +16,7 @@ class AuthController extends Controller
     use ThrottlesLogins;
 
     public function login() {
-        return view('admin.all.login');
+        return view('admin.auth.login');
     }
 
     /**

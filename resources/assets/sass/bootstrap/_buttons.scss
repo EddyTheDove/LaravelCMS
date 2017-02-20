@@ -117,6 +117,9 @@ a.btn {
 .btn-red {
     @include button-variant($color-white, $color-red, $color-red);
 }
+.btn-grey {
+    @include button-variant($color-white, #777, #999);
+}
 
 
 // Link buttons

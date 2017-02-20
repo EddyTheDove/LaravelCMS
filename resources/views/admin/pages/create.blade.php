@@ -8,7 +8,7 @@
 @section('body')
     <div class="page-heading">
         <div class="buttons">
-            <a href="{{ route('pages.index') }}" class="btn btn-lg btn-default">
+            <a href="{{ route('pages.index') }}" class="btn btn-lg btn-grey">
                 <i class="flaticon-undo"></i> Cancel
             </a>
         </div>
@@ -20,7 +20,10 @@
 
     <section class="mt-20">
         <div class="container-fluid">
-            <form class="form" action="" method="post">
+            @include('errors.list')
+
+            <form class="form" action="{{ route('pages.index') }}" method="post">
+                {{ csrf_field() }}
 
                 {{-- Left side  --}}
                 <div class="row">
@@ -70,8 +73,8 @@
                             <div class="block-content">
                                 <div class="form-select grey">
                                     <select class="" name="status">
-                                        <option value="published">Published</option>
                                         <option value="unpublished">Unpublished</option>
+                                        <option value="published">Published</option>
                                     </select>
                                 </div>
 
@@ -100,7 +103,7 @@
                                 <div id="profile_view" class="mt-20"></div>
 
                                 <div class="text-right">
-                                    <a href="/backend/filemanager/dialog.php?type=1&field_id=profile" class="iframe-btn btn-dark btn "> <i class='flaticon-folder'></i> Files</a>
+                                    <a href="/backend/filemanager/dialog.php?type=1&field_id=profile" class="iframe-btn btn-dark btn round"> <i class='flaticon-folder'></i> Files</a>
                                 </div>
                             </div>
                         </div>
@@ -144,15 +147,14 @@ tinymce.init({
     theme: "modern",
     relative_urls: false,
     height : 280,
-    theme_advanced_font_sizes: "10px,12px,13px,14px,16px,18px,20px",
-    font_size_style_values : "10px,12px,13px,14px,16px,18px,20px",
+    fontsize_formats: "8px 10px 12px 14px 16px 18px 24px 32px 36px 60px",
     plugins: [
          "advlist autolink link image lists charmap print preview hr anchor pagebreak",
          "searchreplace wordcount visualblocks visualchars insertdatetime media nonbreaking",
          "table contextmenu directionality emoticons paste textcolor filemanager code"
    ],
-   toolbar1: "undo redo | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | styleselect",
-   toolbar2: "|filemanager | link unlink anchor | image media | forecolor backcolor  | print preview code ",
+   toolbar1: "undo redo | fontsizeselect bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent",
+   toolbar2: "|filemanager | link unlink anchor | image media | forecolor backcolor  | print preview code | styleselect",
    image_advtab: true ,
 
     external_filemanager_path:"/backend/filemanager/",

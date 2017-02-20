@@ -16,6 +16,9 @@
 
     <section class="page page-white">
         <div class="container-fluid">
+
+            @include('errors.list')
+
             <div class="mt-10">
                 <div class="row">
                     <form class="form" action="" method="get">
@@ -59,6 +62,7 @@
                     <thead>
                         <tr>
                             <th>Title</th>
+                            <th>Slug</th>
                             <th>Published</th>
                             <th>Created</th>
                         </tr>
@@ -66,8 +70,9 @@
 
                     <tbody>
                         @foreach($pages as $page)
-                            <tr data-href="/admin/pages/{{ $page->slug }}/edit">
+                            <tr data-href="{{ route('pages.edit', $page->id) }}">
                                 <td class="bold">{{ $page->title }}</td>
+                                <td>{{ $page->slug }}</td>
                                 <td>{{ $page->status === 'published' ? 'Yes' : 'No'}}</td>
                                 <td>{{ date('d/m/Y H:i', strtotime($page->created_at)) }}</td>
                             </tr>
