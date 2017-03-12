@@ -18,6 +18,7 @@ Route::post('admin/login', 'views\admin\AuthController@signin')->name('admin.sig
 Route::group(['prefix' => 'admin', 'middleware' => ['admin_auth', 'admin']], function() {
     Route::resource('users', 'views\admin\UserController');
     Route::resource('pages', 'views\admin\PageController');
+    Route::resource('posts', 'views\admin\PostController');
 
     Route::get('/', 'views\admin\AdminController@home')->name('admin');
     Route::get('logout', 'views\admin\AuthController@logout')->name('admin.logout');

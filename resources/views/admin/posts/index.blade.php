@@ -4,13 +4,13 @@
 @section('body')
     <div class="page-heading">
         <div class="buttons">
-            <a href="{{ route('pages.create') }}" class="btn btn-lg btn-green">
-                <i class="flaticon-cross"></i> New Page
+            <a href="{{ route('posts.create') }}" class="btn btn-lg btn-green">
+                <i class="flaticon-cross"></i> New Post
             </a>
         </div>
 
         <div class="title">
-            Pages
+            Posts
         </div>
     </div>
 
@@ -40,7 +40,7 @@
                                         name="keywords"
                                         class="form-control input-lg"
                                         value="{{ Request::get('keywords') }}"
-                                        placeholder="Page title">
+                                        placeholder="Post title">
                                     </div>
                                 </div>
 
@@ -62,19 +62,18 @@
                     <thead>
                         <tr>
                             <th>Title</th>
-                            <th>Slug</th>
-                            <th>Published</th>
+                            <th>Status</th>
                             <th>Created</th>
+                            <th>Published</th>
                         </tr>
                     </thead>
 
                     <tbody>
-                        @foreach($pages as $page)
-                            <tr data-href="{{ route('pages.edit', $page->id) }}">
-                                <td class="bold">{{ $page->title }}</td>
-                                <td>{{ $page->slug }}</td>
-                                <td>{{ $page->status === 'published' ? 'Yes' : 'No'}}</td>
-                                <td>{{ date('d/m/Y H:i', strtotime($page->created_at)) }}</td>
+                        @foreach($posts as $post)
+                            <tr data-href="{{ route('posts.edit', $post->id) }}">
+                                <td class="bold">{{ $post->title }}</td>
+                                <td>{{ $post->status === 'published' ? 'Published' : 'Unpublished'}}</td>
+                                <td>{{ date('d/m/Y H:i', strtotime($post->created_at)) }}</td>
                             </tr>
                         @endforeach
                     </tbody>
