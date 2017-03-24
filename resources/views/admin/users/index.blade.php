@@ -65,7 +65,7 @@
 
                     <tbody>
                         @foreach($users as $user)
-                            <tr data-href="/admin/users/{{ $user->username }}/edit">
+                            <tr data-href="/admin/users/{{ $user->id }}/edit">
                                 <td class="bold">{{ $user->username }}</td>
                                 <td>{{ $user->name ()}}</td>
                                 <td>{{ $user->email }}</td>

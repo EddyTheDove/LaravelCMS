@@ -63,6 +63,12 @@
         </li>
 
 
+        <li class="{{ Request::is('admin/files*') ? 'active' : '' }}">
+            <a href="/admin/files">
+                <i class="flaticon-clip"></i>
+                Files
+            </a>
+        </li>
 
         <li class="{{ Request::is('admin/settings*') ? 'active' : '' }}">
             <a href="/admin/settings">
@@ -74,9 +80,9 @@
         <li class="separer"></li>
 
         <li>
-            <a href="/admin/account">
-                <i class="flaticon-user-material"></i>
-                My Account
+            <a href="/" target="_blank">
+                <i class="flaticon-home"></i>
+                Main Website
             </a>
         </li>
 

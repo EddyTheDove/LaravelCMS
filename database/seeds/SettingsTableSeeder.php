@@ -15,7 +15,11 @@ class SettingsTableSeeder extends Seeder
         Settings::create([
             'app_name'      => 'My Awesome Blog',
             'app_motto'     => 'The best blog ever',
-            'admin_email'   => 'admin@email.com'
+            'admin_email'   => 'admin@email.com',
+            'business_to_name'  => 'Contact Name',
+            'business_to_email' => 'contactme@myblog.com',
+            'phone'             => '02 2323 4554',
+            'phone2'            => '04 9988 8899'
         ]);
     }
 }

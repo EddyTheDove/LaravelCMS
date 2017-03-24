@@ -17,4 +17,12 @@ class AdminController extends Controller
 
         return view('admin.all.dashboard', compact('users', 'posts', 'comments'));
     }
+
+
+
+
+    public function files()
+    {
+        return view('admin.all.files');
+    }
 }

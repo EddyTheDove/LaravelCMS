@@ -20,6 +20,14 @@ class CreateSettings extends Migration
             $table->string('app_motto')->nullable();
             $table->string('app_url')->nullable();
             $table->string('logo_url')->nullable();
+            $table->string('business_to_name')->nullable();
+            $table->string('business_to_email')->nullable();
+            $table->string('addresse_street')->nullable();
+            $table->string('addresse_suburb')->nullable();
+            $table->string('addresse_postcode')->nullable();
+            $table->string('addresse_state')->nullable();
+            $table->string('phone')->nullable();
+            $table->string('phone2')->nullable();
             $table->boolean('is_live')->default(true);
             $table->boolean('users_can_register')->default(true);
             $table->integer('default_role_id')->default(2);
