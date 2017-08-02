@@ -74,6 +74,7 @@
                                 <td class="bold">{{ $post->title }}</td>
                                 <td>{{ $post->status === 'published' ? 'Published' : 'Unpublished'}}</td>
                                 <td>{{ date('d/m/Y H:i', strtotime($post->created_at)) }}</td>
+                                <td>{{ $post->status === 'published' ? 'Yes' : 'No'}}</td>
                             </tr>
                         @endforeach
                     </tbody>

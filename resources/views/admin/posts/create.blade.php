@@ -78,6 +78,14 @@
                                     </select>
                                 </div>
 
+                                <div class="form-select grey">
+                                    <select class="" name="template">
+                                        @foreach (config('templates.posts') as $key => $value)
+                                            <option value="{{ $key }}">{{ $key }} template</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+
                                 <div class="mt-20">
                                     <button type="submit" name="submit" class="btn btn-lg btn-blue btn-block">
                                         <i class="flaticon-check"></i> Save Post
