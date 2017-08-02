@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\views\admin;
 
 use Auth;
+use Carbon\Carbon;
 use App\Models\Post;
 use App\Traits\SlugTrait;
 use Illuminate\Http\Request;
@@ -99,6 +100,7 @@ class PostController extends Controller
             'content'           => $request->content,
             'status'            => $request->status,
             'category_id'       => $request->category_id,
+            'published_at'      => Carbon::now(),
             'last_updated_by'   => Auth::user()->id
         ]);
 

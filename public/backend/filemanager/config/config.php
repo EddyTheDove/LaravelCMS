@@ -298,8 +298,8 @@ $config = array(
 	'fixed_path_from_filemanager'             => array('../../docs/md/'), //fixed path of the image folder from the current position on upload folder
 	'fixed_image_creation_name_to_prepend'    => array(''), //name to prepend on filename
 	'fixed_image_creation_to_append'          => array(''), //name to appendon filename
-	'fixed_image_creation_width'              => array(), //width of image (you can leave empty if you set height)
-	'fixed_image_creation_height'             => array(300), //height of image (you can leave empty if you set width)
+	'fixed_image_creation_width'              => array(300, ''), //width of image (you can leave empty if you set height)
+	'fixed_image_creation_height'             => array(200, ''), //height of image (you can leave empty if you set width)
 	/*
 	#             $option:     0 / exact = defined size;
 	#                          1 / portrait = keep aspect set height;

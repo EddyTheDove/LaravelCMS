@@ -41,25 +41,11 @@
             </a>
         </li>
 
-        {{-- Users & Roles  --}}
-        <li class="dropdown {{ Request::is('admin/users*') ? 'active open' : '' }}">
-            <a href="" data-toggle="dropdown">
+        <li class="{{ Request::is('admin/users*') ? 'active' : '' }}">
+            <a href="/admin/users">
                 <i class="flaticon-users"></i>
                 Users
             </a>
-
-            <ul class="sidebar-dropdown">
-                <li>
-                    <a href="/admin/users">
-                        All Users
-                    </a>
-                </li>
-                <li>
-                    <a href="/admin/roles">
-                        Roles
-                    </a>
-                </li>
-            </ul>
         </li>
 
 
