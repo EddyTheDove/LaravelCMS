@@ -22,7 +22,7 @@ class UserPolicy
      * @param  \App\Models\User  $user
      * @return mixed
      */
-    public function view(User $user, User $user)
+    public function view(User $user, User $client)
     {
         //
     }
@@ -45,7 +45,7 @@ class UserPolicy
      * @param  \App\Models\User  $user
      * @return mixed
      */
-    public function update(User $user, User $user)
+    public function update(User $user, User $client)
     {
         //
     }
@@ -57,7 +57,7 @@ class UserPolicy
      * @param  \App\Models\User  $user
      * @return mixed
      */
-    public function delete(User $user, User $user)
+    public function delete(User $user, User $client)
     {
         //
     }
