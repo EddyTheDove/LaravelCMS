@@ -11,7 +11,7 @@
     @include('admin.includes.favicons')
 </head>
 <body class="login-page">
-    <h3 class="text-center white mt-60">LaravelCMS</h3>
+    <h3 class="text-center white mt-60">LARAVEL CMS</h3>
 
     <section class="login-form">
         <h2>Sign In</h2>

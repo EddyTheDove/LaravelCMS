@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\views\admin;
 
 use Auth;
+use Carbon\Carbon;
 use App\Models\Post;
 use App\Traits\SlugTrait;
 use Illuminate\Http\Request;
@@ -98,7 +99,9 @@ class PostController extends Controller
             'excerpt'           => $request->excerpt,
             'content'           => $request->content,
             'status'            => $request->status,
-            'category_id'       => $request->category_id,
+            'template'          => $request->template ? $request->template : 'default',
+            'category_id'       => $request->category_id ? $request->category_id : 1,
+            'published_at'      => Carbon::now(),
             'last_updated_by'   => Auth::user()->id
         ]);
 
@@ -122,7 +125,7 @@ class PostController extends Controller
 
         $post = Post::find($id);
         if ( !$post ) return redirect()->route('post.index');
-        return view('admin.post.edit', ['post' => $post]);
+        return view('admin.posts.edit', ['post' => $post]);
     }
 
 
@@ -158,7 +161,8 @@ class PostController extends Controller
             $post->template         = $request->template;
             $post->excerpt          = $request->excerpt;
             $post->content          = $request->content;
-            $post->category_id      = $request->category_id;
+            $post->template         = $request->template ? $request->template : 'default';
+            $post->category_id      = $request->category_id ? $request->category_id : 1;
             $post->last_updated_by  = Auth::user()->id;
             $post->save();
 

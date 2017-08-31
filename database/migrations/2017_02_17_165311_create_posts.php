@@ -18,11 +18,11 @@ class CreatePosts extends Migration
             $table->integer('category_id')->default(1); //Post belongs to 'uncategorized' by default
             $table->string('title');
             $table->string('slug');
-            $table->string('tags');
-            $table->string('image');
+            $table->string('tags')->nullable();
+            $table->string('image')->nullable();
             $table->string('template')->default('default');
-            $table->text('excerpt');
-            $table->text('content');
+            $table->text('excerpt')->nullable();
+            $table->text('content')->nullable();
             $table->enum('status', ['published', 'unpublished'])->default('unpublished');
             $table->boolean('is_commentable')->default(true);
             $table->datetime('published_at');

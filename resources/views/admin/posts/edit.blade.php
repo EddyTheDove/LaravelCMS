@@ -8,16 +8,16 @@
 @section('body')
     <div class="page-heading">
         <div class="buttons">
-            <a href="{{ route('pages.index') }}" class="btn btn-lg btn-grey">
+            <a href="{{ route('posts.index') }}" class="btn btn-lg btn-grey">
                 <i class="flaticon-undo"></i> Cancel
             </a>
-            <a href="/{{ $page->slug }}" class="btn btn-lg btn-green">
-                <i class="flaticon-view"></i> View Page
+            <a href="/{{ $post->slug }}" class="btn btn-lg btn-green">
+                <i class="flaticon-view"></i> View Post
             </a>
         </div>
 
         <div class="title">
-            Edit Page
+            Edit Post
         </div>
     </div>
 
@@ -25,7 +25,7 @@
         <div class="container-fluid">
             @include('errors.list')
 
-            {!! Form::model($page, ['method' => 'PATCH', 'route' => ['pages.update', $page->id], 'class' => 'form' ]) !!}
+            {!! Form::model($post, ['method' => 'PATCH', 'route' => ['posts.update', $post->id], 'class' => 'form' ]) !!}
             {{-- Left side  --}}
             <div class="row">
                 <div class="col-sm-8">
@@ -73,20 +73,20 @@
                             <div class="form-select grey">
                                 {!! Form::select('status',
                                     ['unpublished' => 'Unpublished', 'published' => 'Published'],
-                                    $page->status) !!}
+                                    $post->status) !!}
                             </div>
 
                             <div class="form-select grey">
                                 <select class="" name="template">
-                                    @foreach (config('templates.pages') as $key => $value)
-                                        <option value="{{ $key }}" {{ $page->template == $key ? 'seletected' : '' }}>{{ $key }} template</option>
+                                    @foreach (config('templates.posts') as $key => $value)
+                                        <option value="{{ $key }}" {{ $post->template == $key ? 'seletected' : '' }}>{{ $key }} template</option>
                                     @endforeach
                                 </select>
                             </div>
 
                             <div class="mt-20">
                                 <button type="submit" name="submit" class="btn btn-lg btn-blue btn-block">
-                                    <i class="flaticon-check"></i> Update Page
+                                    <i class="flaticon-check"></i> Update Post
                                 </button>
                             </div>
                         </div>
@@ -97,7 +97,7 @@
                         <div class="block-content">
                             <h3>Image Preview</h3>
 
-                            <input type="hidden" class="form-control" id='profile' name='image' readonly value="{{ $page->image }}">
+                            <input type="hidden" class="form-control" id='profile' name='image' readonly value="{{ $post->image }}">
                             <div id="profile_view" class="mt-20"></div>
 
                             <div class="text-right">
