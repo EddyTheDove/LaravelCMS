@@ -11,10 +11,7 @@ class Post extends Model
 
     protected $table = 'posts';
     protected $dates = ['deleted_at', 'published_at'];
-    protected $fillable = [
-        'title', 'slug', 'tags', 'image', 'template', 'excerpt', 'content',
-        'is_public', 'last_updated_by', 'is_commentable', 'published_at'
-    ];
+    protected $guarded = ['id'];
 
 
     public function user() {
