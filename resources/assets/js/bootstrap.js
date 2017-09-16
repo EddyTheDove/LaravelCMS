@@ -1,5 +1,6 @@
 
 window._ = require('lodash');
+window.moment = require('moment')
 
 /**
  * We'll load jQuery and the Bootstrap jQuery plugin which provides support
@@ -28,7 +29,6 @@ window.Vue = require('vue');
 window.axios = require('axios');
 
 window.axios.defaults.headers.common = {
-    'X-CSRF-TOKEN': window.Laravel.csrfToken,
     'X-Requested-With': 'XMLHttpRequest'
 };
 
